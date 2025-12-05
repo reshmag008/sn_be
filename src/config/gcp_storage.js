@@ -15,6 +15,6 @@ const storage = new Storage({
 // console.log("Key exists:", fs.existsSync(path.resolve(__dirname, "../keys/gcp-service-account.json")));
 
 
-const bucketName = "auction-players";
+const bucketName = "sn_players";
 const bucket = storage.bucket(bucketName);
 module.exports = { bucket };
