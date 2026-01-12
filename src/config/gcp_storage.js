@@ -2,7 +2,7 @@ const { Storage } = require("@google-cloud/storage");
 const path = require("path");
 const fs = require("fs");
 
-const serviceAccount = JSON.parse(process.env.GCP_SERVICE_ACCOUNT_KEY_JSON);
+const serviceAccount = process.env.GCP_SERVICE_ACCOUNT_KEY_JSON ?  JSON.parse(process.env.GCP_SERVICE_ACCOUNT_KEY_JSON) : {} ;
 
 // const storage = new Storage({
 //   keyFilename: path.resolve(__dirname, "../keys/gcp-service.json"),
@@ -15,6 +15,6 @@ const storage = new Storage({
 // console.log("Key exists:", fs.existsSync(path.resolve(__dirname, "../keys/gcp-service-account.json")));
 
 
-const bucketName = "sn_players";
+const bucketName = "sn_players1";
 const bucket = storage.bucket(bucketName);
 module.exports = { bucket };
